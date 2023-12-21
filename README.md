@@ -1,32 +1,25 @@
 # Roket Veri Görselleştirme
 
-Bu proje, bir roketin sensörlerinden alınan verileri kablosuz olarak iletmek ve bir bilgisayar arayüzünde gerçek zamanlı olarak görselleştirmek için tasarlanmıştır.
+Bu depo, roketin farklı verilerini görselleştirmek ve izlemek için kullanılan bir dizi arayüz ve Arduino uygulamasını içerir.
 
-## Kurulum
+## Dummy Arayüzü
 
-1. **Bilgisayar Arayüzü (dummyInterface):**
-   - Bu klasördeki `dummyInterface.py` dosyasını çalıştırarak Tkinter tabanlı bir arayüzü başlatın.
-   - Arayüz, roketin anlık verilerini gösterir ve kullanıcıya veri akışını durdurma veya devam ettirme olanağı tanır.
+Bu kısım, roket verilerini simüle eden bir arayüz sağlar. Tkinter kullanılarak oluşturulan bu arayüz, matplotlib kütüphanesi ile gerçek zamanlı veri görselleştirmesi yapar. Dummy verilerle çalışır ve bir roketin zamanla değişen yükseklik, hız, basınç, sıcaklık ve ivmesini taklit eder.
 
-2. **Prototip Arduino (mainArduinoPrototype):**
-   - Bu klasördeki Arduino kodunu roket prototipinizdeki bir Arduino kartına yükleyin.
-   - BMP180 sensörü ile sıcaklık ve basınç ölçümlerini alın.
-   - GY-NEO6MV2 GPS modülü ile roketin konumunu belirleyin.
-   - RFM98W LoRa modülü ile alınan verileri kablosuz olarak bilgisayar arayüzüne iletim yapın.
+## Prototype Arayüzü
+Bu kısım, gerçek donanım cihazlarından gelen roket verilerini görselleştirmek için kullanılır. Tkinter ve matplotlib kullanılarak oluşturulan arayüz, bir Raspberry Pi ve LoRa modülü aracılığıyla gerçek zamanlı olarak roket verilerini alır.
 
-## Kullanım
+## Başlatma
+Arduino IDE kullanarak Arduino kartınıza yüklenmiş kodu çalıştırın.
 
-1. Arayüzü başlatın (`dummyInterface.py`).
-2. Prototip Arduino'yu çalıştırın ve roket sensörlerinden alınan verilerin arayüze aktarıldığını gözlemleyin.
-3. Arayüzdeki "Pause" düğmesini kullanarak veri akışını durdurabilir veya devam ettirebilirsiniz.
+## Main Arduino Prototipi
+Bu kısım, roket verilerini toplamak ve LoRa modülü aracılığıyla göndermek için kullanılan Arduino prototipinin ana kodunu içerir. BMP180 ve GY-NEO6MV2 sensörleri ile roket verilerini toplar ve RFM98W modülü ile verileri gönderir.
 
-## Bağımlılıklar
+## Gereksinimler
+Adafruit_BMP085 kütüphanesi
+TinyGPS++ kütüphanesi
+RH_RF95 kütüphanesi
 
-- Tkinter
-- Matplotlib
-- Adafruit BMP085 Kütüphanesi
-- TinyGPS++ Kütüphanesi
-- RadioHead RF95 Kütüphanesi
 
 ## Lisans
 
